@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan&display=swap');
+
+/*general styles*/
+:root{
+    --light-color-1: #fafff1;
+    --light-color-2: #8FBD4F;
+    --light-color-3: #054D3B;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Gothic', sans-serif;
+}
+html,body{
+    min-height: 100vh;
+    min-width: 100vw;
+}
+#app_ui{
+    display: block;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: var(--light-color-1);
+}
+#nav-bar{
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+#nav-bar-list{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+#logo{
+    height: 100px;
+    margin-left: 1rem;
+}
+
+#theme-icon{
+    height: 30px !important;
+    width: 30px !important;
+    margin-right: 1rem;
+}
