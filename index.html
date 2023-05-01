@@ -6,16 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fito Info</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 <body>
-    <div id="app_ui">
+    <section id="app_ui">
+        <!--NAV BAR-->
         <nav id="nav-bar">
             <img id="logo" src="/assets/logo.svg" alt="logo">
             <img id="theme-icon" src="/assets/moon.svg" alt=""> 
-             
-
         </nav>
-    </div>
+        <section id="content">
+            <div id="search-and-filter-area">
+                <div id="filter-area">
+                    <button id="filter-btn">
+                        <span class="material-symbols-outlined">tune</span>
+                    </button>
+                </div>
+                <div id="search-area">
+                    <input type="text" placeholder="enter a fruit or a vegetable">
+                    <button id="search-btn">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                    
+                </div>
+            </div>
+        </section>
+    </section>
     <script src="/script.js"></script>
 </body>
 </html>

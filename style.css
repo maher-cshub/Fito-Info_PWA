@@ -5,17 +5,20 @@
     --light-color-1: #fafff1;
     --light-color-2: #8FBD4F;
     --light-color-3: #054D3B;
+    --font1: "League Gothic", "sans-serif";
+    --font2: "League Spartan", "sans-serif";
+
 }
+
 *{
     margin: 0;
     padding: 0;
+    border: 0;
     box-sizing: border-box;
-    font-family: 'League Gothic', sans-serif;
+    font-family: var(--font1);
+
 }
-html,body{
-    min-height: 100vh;
-    min-width: 100vw;
-}
+
 #app_ui{
     display: block;
     min-height: 100vh;
@@ -32,21 +35,102 @@ html,body{
     align-items: center;
     height: 100px;
     width: 100%;
-}
-
-#nav-bar-list{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
+    
 }
 
 #logo{
     height: 100px;
     margin-left: 1rem;
+    cursor: pointer;
 }
 
 #theme-icon{
     height: 30px !important;
     width: 30px !important;
     margin-right: 1rem;
+    cursor: pointer;
 }
+
+#content{
+    position: relative;
+    margin-top: 100px;
+}
+#search-and-filter-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+}
+#filter-area{
+    flex: 1;
+    flex-grow: 0;
+    flex-basis: 80px;
+    height: 100%;
+    margin-left: 1rem;
+}
+
+#search-area{
+    height: 100%;
+    flex: 3;
+    flex-grow: 3;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-btn, #filter-btn{
+    position: relative;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-color-3);
+}
+#filter-btn{
+    border-radius: 10%;
+}
+
+#search-btn{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#search-btn span, #filter-btn span{
+    font-size: 40px;
+    color: var(--light-color-1);
+}
+
+
+#search-area input{
+    height: 100%;
+    min-width: 200px;
+    width: 50%;
+    border: var(--light-color-3) solid 3px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: none;
+    background-color: white;
+    font-size: large;
+    font-family: var(--font2);
+    font-weight: 600;
+    padding-left: 1rem ;
+    letter-spacing: 1px;
+    color:var(--light-color-3);
+}
+
+#search-area input:hover{
+    border: solid 3px var(--light-color-2) ;
+}
+
+#search-area input:focus{
+    background-color: var(--light-color-1);
+    border: solid 3px var(--light-color-2) ;
+}
+
+
+
