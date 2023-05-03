@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=League+Gothic&family=League+Spartan&family=Mukta&display=swap');
 
 /*general styles*/
 :root{
@@ -7,10 +7,14 @@
     --light-color-3: #054D3B;
     --font1: "League Gothic", "sans-serif";
     --font2: "League Spartan", "sans-serif";
+    --font3:"Lato","sans-serif";
+    --font4:"Mukta","sans-serif";
+    --app-width: 100vw;
+    --app-height:100vh;
 
 }
 
-*{
+*,html,body{
     margin: 0;
     padding: 0;
     border: 0;
@@ -21,27 +25,29 @@
 
 #app_ui{
     display: block;
-    min-height: 100vh;
-    min-width: 100vw;
+    min-height: var(--app-height);
+    min-width: var(--app-width);
     background-color: var(--light-color-1);
 }
 #nav-bar{
     position: relative;
     display: flex;
-    flex: 1;
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
     align-items: center;
-    height: 100px;
+    height: 200px;
     width: 100%;
+   /* background-color: rgb(255, 183, 119);*/
     
 }
 
+
 #logo{
-    height: 100px;
-    margin-left: 1rem;
+    height: 180px;
+    width: 100%;
     cursor: pointer;
+    padding-left: 40px;
 }
 
 #theme-icon{
@@ -49,11 +55,14 @@
     width: 30px !important;
     margin-right: 1rem;
     cursor: pointer;
+    /*background-color: yellow;*/
 }
 
 #content{
     position: relative;
     margin-top: 100px;
+    display: flex;
+    flex-direction: column;
 }
 #search-and-filter-area{
     display: flex;
@@ -61,19 +70,40 @@
     justify-content: space-between;
     align-content: center;
     align-items: center;
-    height: 60px;
+    flex-wrap: wrap;
+    height: 5em;
     width: 100%;
+    margin: 0 auto;
+    background-color: chartreuse;
+    text-align: center;
 }
 #filter-area{
-    flex: 1;
+    position: relative;
     flex-grow: 0;
     flex-basis: 80px;
-    height: 100%;
-    margin-left: 1rem;
+    height: 3em;
+    background-color: black;
+}
+
+#filter-area-filters{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    width: 100%;
+
+    background-color: cornflowerblue;
+}
+#filter-area-filters ul li{
+    list-style-type: none;
+    text-decoration: none;
+    text-align: left;
+    display: inline-block;
+    padding:0.5em 1.2em;
 }
 
 #search-area{
-    height: 100%;
+    height: 3em;
     flex: 3;
     flex-grow: 3;
     text-align: center;
@@ -90,9 +120,16 @@
     justify-content: center;
     align-items: center;
     background-color: var(--light-color-3);
+    user-select: none;
+    cursor: pointer;
 }
+
+#search-btn:hover , #filter-btn:hover{
+    background-color: var(--light-color-2);
+}   
 #filter-btn{
     border-radius: 10%;
+    margin-left: 1em;
 }
 
 #search-btn{
@@ -123,13 +160,94 @@
     color:var(--light-color-3);
 }
 
+#search-area input::placeholder{
+    color: var(--light-color-3);
+}
 #search-area input:hover{
     border: solid 3px var(--light-color-2) ;
+}
+
+#search-area input:hover::placeholder{
+    color: var(--light-color-2);
 }
 
 #search-area input:focus{
     background-color: var(--light-color-1);
     border: solid 3px var(--light-color-2) ;
+}
+
+#results-area{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    background-color: aqua;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+
+#results-area #item{
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 21px -12px var(--light-color-3);
+    margin: 2em 0;
+    background-color: var(--light-color-2);
+}
+
+#item #item-image{
+    position: relative;
+    height: 70%;
+    height: 400px;
+}
+
+#item #item-details{
+    position: relative;
+    height: 30%;
+}
+#item #item-image img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+#item #item-details *{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#item #item-title{
+    font-family: var(--font2);
+    font-weight: 600;
+    font-size: 3rem;
+    width: 80%;
+    word-wrap: break-word;
+    list-style: none;
+    line-height: 1em;
+    margin: 0.4rem auto;
+}
+#item #item-info{
+    font-family: var(--font4);
+    font-weight:600;
+    font-size: 2rem;
+    width: 80%;
+    margin: 0.8rem auto;
+    min-height: 3rem;
+    max-height: 4rem;
+    border-radius: 1rem 1rem;
+}
+
+
+.hidden{
+    visibility:hidden;
+}
+
+.visible{
+    visibility:visible;
 }
 
 
