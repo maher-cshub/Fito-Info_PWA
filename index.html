@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fito Info</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 <body>
-    <section id="app_ui">
+    <section id="app-ui" class="light-theme">
         <!--NAV BAR-->
         <nav id="nav-bar">
             <img id="logo" src="/assets/logo.svg" alt="logo">
@@ -19,72 +20,54 @@
         <section id="content">
             <!--SEARCH AND FILTER AREA-->
             <div id="search-and-filter-area">
-                <div id="filter-area">
-                    <button id="filter-btn">
-                        <span class="material-symbols-outlined">tune</span>
-                    </button>
-                </div>
+
                 <div id="search-area">
-                    <input type="text" placeholder="enter a fruit or a vegetable">
-                    <button id="search-btn">
-                        <span class="material-symbols-outlined">search</span>
-                    </button>
+                    <input id="user-search-input" type="text" placeholder="enter a fruit or a vegetable">
                 </div>
             </div>
             <!--RESULTS AREA-->
-            <div id="filter-area-filters" class="hidden">
-                <ul class="filters">
-                    <li><input type="checkbox"> Vegtables</li>
-                    <li> <input type="checkbox"> Ftuits</li>
-                    <li><input type="checkbox"> Vegtables</li>
-                    <li> <input type="checkbox"> Ftuits</li>
-                    <li><input type="checkbox"> Vegtables</li>
-                    <li> <input type="checkbox"> Ftuits</li>
-                    <li><input type="checkbox"> Vegtables</li>
-                    <li> <input type="checkbox"> Ftuits</li>
-                </ul>
-            </div>
             <div id="results-area">
-                <div id="item">
+                <div id="item" datafilter="fruits" item_id="0">
                     <div id="item-image">
                         <img src="https://images.pexels.com/photos/7214602/pexels-photo-7214602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcset="">
                     </div>
                     <div id="item-details">
                         <h1 id="item-title">Apple</h1>
-                        <button id="item-info">GET INFO</button>
+                        <button class="info-btn-cls" id="item-info-btn">GET INFO</button>
                     </div>
                 </div>
-                <div id="item">
+                <div id="item" datafilter="fruits" item_id="1">
                     <div id="item-image">
                         <img src="assets/banana.jpg" alt="" srcset="">
                     </div>
                     <div id="item-details">
                         <h1 id="item-title">banana</h1>
-                        <button id="item-info">GET INFO</button>
+                        <button class="info-btn-cls" id="item-info-btn">GET INFO</button>
                     </div>
                 </div>
-                <div id="item">
+                <div id="item" datafilter="vegetables" item_id="2">
                     <div id="item-image">
                         <img src="assets/carrot.jpg" alt="" srcset="">
                     </div>
                     <div id="item-details">
                         <h1 id="item-title">Carrot</h1>
-                        <button id="item-info">GET INFO</button>
+                        <button class="info-btn-cls"  id="item-info-btn">GET INFO</button>
                     </div>
                 </div>
-                <div id="item">
+                <div id="item" datafilter="vegetables" item_id="3">
                     <div id="item-image">
                         <img src="assets/broccoli.jpg" alt="" srcset="">
                     </div>
                     <div id="item-details">
-                        <h1 id="item-title">ddddddddddddddddd</h1>
+                        <h1 id="item-title">broccoli</h1>
 
-                        <button id="item-info">GET INFO</button>
+                        <button class="info-btn-cls" id="item-info-btn">GET INFO</button>
                     </div>
                 </div>
             </div>
         </section>
     </section>
-    <script src="/script.js"></script>
+    <script src="theme.js"></script>
+    <script src="script1.js"></script>
 </body>
 </html>

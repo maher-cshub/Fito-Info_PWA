@@ -1,63 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=League+Gothic&family=League+Spartan&family=Mukta&display=swap');
-
-/*general styles*/
-:root{
-    --light-color-1: #fafff1;
-    --light-color-2: #8FBD4F;
-    --light-color-3: #054D3B;
-    --font1: "League Gothic", "sans-serif";
-    --font2: "League Spartan", "sans-serif";
-    --font3:"Lato","sans-serif";
-    --font4:"Mukta","sans-serif";
-    --app-width: 100vw;
-    --app-height:100vh;
-
-}
-
-*,html,body{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-    font-family: var(--font1);
-
-}
-
-#app_ui{
-    display: block;
-    min-height: var(--app-height);
-    min-width: var(--app-width);
-    background-color: var(--light-color-1);
-}
-#nav-bar{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-    height: 200px;
-    width: 100%;
-   /* background-color: rgb(255, 183, 119);*/
-    
-}
-
-
-#logo{
-    height: 180px;
-    width: 100%;
-    cursor: pointer;
-    padding-left: 40px;
-}
-
-#theme-icon{
-    height: 30px !important;
-    width: 30px !important;
-    margin-right: 1rem;
-    cursor: pointer;
-    /*background-color: yellow;*/
-}
-
 #content{
     position: relative;
     margin-top: 100px;
@@ -74,7 +14,6 @@
     height: 5em;
     width: 100%;
     margin: 0 auto;
-    background-color: chartreuse;
     text-align: center;
 }
 #filter-area{
@@ -82,7 +21,7 @@
     flex-grow: 0;
     flex-basis: 80px;
     height: 3em;
-    background-color: black;
+
 }
 
 #filter-area-filters{
@@ -90,9 +29,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     flex: 1;
-    width: 100%;
-
-    background-color: cornflowerblue;
+    background-color: var(--secondary-color-4);
+    border-radius: 2rem;
+    margin: 0.2rem auto;
+    max-width: 80%;
 }
 #filter-area-filters ul li{
     list-style-type: none;
@@ -100,105 +40,109 @@
     text-align: left;
     display: inline-block;
     padding:0.5em 1.2em;
+    font-size: larger;
+    color: var(--primary-color);
+    user-select: none;
+    cursor: pointer;
 }
+
 
 #search-area{
     height: 3em;
-    flex: 3;
-    flex-grow: 3;
+    flex: 1;
+    flex-grow: 1;
     text-align: center;
     display:flex;
     justify-content: center;
     align-items: center;
 }
 
-#search-btn, #filter-btn{
+#filter-btn{
     position: relative;
     width: 50px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light-color-3);
+    background-color: var(--secondary-color-3);
     user-select: none;
     cursor: pointer;
 }
 
-#search-btn:hover , #filter-btn:hover{
-    background-color: var(--light-color-2);
+#filter-btn:hover{
+    background-color: var(--secondary-color-2);
 }   
 #filter-btn{
     border-radius: 10%;
     margin-left: 1em;
 }
 
-#search-btn{
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-#search-btn span, #filter-btn span{
+#filter-btn span{
     font-size: 40px;
-    color: var(--light-color-1);
+    color: var(--secondary-color-1);
 }
 
 
 #search-area input{
     height: 100%;
-    min-width: 200px;
+    min-width: 250px;
     width: 50%;
-    border: var(--light-color-3) solid 3px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    max-width: 600px;
+    border: var(--secondary-color-3) solid 3px;
+    border-radius: 10px;
     outline: none;
-    background-color: white;
+    background-color: var(--primary-color);
     font-size: large;
     font-family: var(--font2);
     font-weight: 600;
-    padding-left: 1rem ;
+    padding-left: 0.5em ;
     letter-spacing: 1px;
-    color:var(--light-color-3);
+    color:var(--secondary-color-2);
 }
 
 #search-area input::placeholder{
-    color: var(--light-color-3);
+    color: var(--secondary-color-3);
 }
 #search-area input:hover{
-    border: solid 3px var(--light-color-2) ;
+    border: solid 3px var(--secondary-color-2) ;
 }
 
 #search-area input:hover::placeholder{
-    color: var(--light-color-2);
+    color: var(--secondary-color-2);
 }
 
 #search-area input:focus{
-    background-color: var(--light-color-1);
-    border: solid 3px var(--light-color-2) ;
+    background-color: var(--secondary-color-2);
+    border: solid 3px var(--secondary-color-2) ;
+    color: var(--secondary-color-1);
 }
+
 
 #results-area{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: (1,1fr);
     gap: 1.5rem;
-    background-color: aqua;
     width: 80%;
     margin: 2rem auto;
+
+
 }
 
 
 #results-area #item{
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 4px 21px -12px var(--light-color-3);
+    box-shadow: 0 4px 21px -12px var(--secondary-color-3);
     margin: 2em 0;
-    background-color: var(--light-color-2);
+    background-color: var(--secondary-color-1);
 }
 
 #item #item-image{
     position: relative;
     height: 70%;
     height: 400px;
+    width: 100%;
 }
 
 #item #item-details{
@@ -223,14 +167,14 @@
 #item #item-title{
     font-family: var(--font2);
     font-weight: 600;
-    font-size: 3rem;
+    font-size: calc(3rem + 1vh);
     width: 80%;
     word-wrap: break-word;
     list-style: none;
     line-height: 1em;
     margin: 0.4rem auto;
 }
-#item #item-info{
+#item #item-info-btn{
     font-family: var(--font4);
     font-weight:600;
     font-size: 2rem;
@@ -239,8 +183,15 @@
     min-height: 3rem;
     max-height: 4rem;
     border-radius: 1rem 1rem;
+    background-color: var(--secondary-color-3);
+    color: var(--secondary-color-1);
+    cursor: pointer;
 }
 
+#item #item-info-btn:hover{
+    color: var(--secondary-color-3);
+    background-color: var(--secondary-color-2);
+}
 
 .hidden{
     visibility:hidden;
@@ -250,5 +201,21 @@
     visibility:visible;
 }
 
+/* Media Queries */
+@media screen and (min-width: 600px){
+    #results-area{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 
+@media screen and (min-width: 768px){
+    #results-area{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media screen and (min-width: 1200px){
+    #results-area{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

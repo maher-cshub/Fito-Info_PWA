@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=League+Gothic&family=League+Spartan&family=Mukta&display=swap');
+
+/*general styles*/
+:root{
+
+    --font1: "League Gothic", "sans-serif";
+    --font2: "League Spartan", "sans-serif";
+    --font3:"Lato","sans-serif";
+    --font4:"Mukta","sans-serif";
+    --app-width: 100vw;
+    --app-height:100vh;
+    
+    .light-theme{
+        --primary-color:#fafff1; 
+        --secondary-color-1:#e3fcb3;
+        --secondary-color-2: #8FBD4F;
+        --secondary-color-3: #054D3B;  
+        --secondary-color-4:var(--secondary-color-2);  
+    }
+    .dark-theme{
+        --primary-color:#160b00;
+        --secondary-color-1: #e3fcb3;
+        --secondary-color-3: #8FBD4F;
+        --secondary-color-2: #054D3B; 
+        --secondary-color-4:var(--secondary-color-1);      
+    }
+}
+
+*,html,body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: var(--font1);
+
+}
+
+#app-ui{
+    display: block;
+    min-height: var(--app-height);
+    max-width: var(--app-width);
+    background-color: var(--primary-color);
+}
+#nav-bar{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+   /* background-color: rgb(255, 183, 119);*/
+    
+}
+
+
+#logo{
+    height: 180px;
+    width: 100%;
+    cursor: pointer;
+    padding-left: 40px;
+}
+
+#theme-icon{
+    height: 30px !important;
+    width: 30px !important;
+    margin-right: 1rem;
+    cursor: pointer;
+    /*background-color: yellow;*/
+}
