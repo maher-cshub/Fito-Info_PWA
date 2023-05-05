@@ -32,7 +32,7 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
-    font-family: var(--font1);
+
 
 }
 
@@ -78,8 +78,8 @@ body::-webkit-scrollbar-thumb:hover{
 #logo{
     height: 180px;
     width: 100%;
-    cursor: pointer;
     padding-left: 40px;
+    user-select: none;
 }
 
 #theme-icon{
@@ -87,6 +87,7 @@ body::-webkit-scrollbar-thumb:hover{
     width: 30px !important;
     margin-right: 1rem;
     cursor: pointer;
+    user-select: none;
     /*background-color: yellow;*/
 }
 

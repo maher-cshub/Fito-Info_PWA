@@ -138,7 +138,15 @@
     margin: 2em 0;
     background-color: var(--secondary-color-1);
 }
+#item:hover{
 
+    filter:saturate(100%);
+    translate: 0px -10px 0px;
+}
+
+#item:not(:hover){
+    filter: saturate(20%) blur(1px);
+}
 #item #item-image{
     position: relative;
     height: 70%;
