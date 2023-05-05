@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=League+Gothic&family=League+Spartan&family=Mukta&display=swap');
 
 /*general styles*/
+
 :root{
 
     --font1: "League Gothic", "sans-serif";
@@ -9,7 +10,6 @@
     --font4:"Mukta","sans-serif";
     --app-width: 100vw;
     --app-height:100vh;
-    
     .light-theme{
         --primary-color:#fafff1; 
         --secondary-color-1:#e3fcb3;
@@ -18,21 +18,39 @@
         --secondary-color-4:var(--secondary-color-2);  
     }
     .dark-theme{
-        --primary-color:#160b00;
+        --primary-color:#241100;
         --secondary-color-1: #e3fcb3;
         --secondary-color-3: #8FBD4F;
         --secondary-color-2: #054D3B; 
         --secondary-color-4:var(--secondary-color-1);      
     }
+
 }
 
-*,html,body{
+*{
     margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
     font-family: var(--font1);
 
+}
+
+body{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+    background-color:#626262;
+    max-width: 0.4rem;
+}
+body::-webkit-scrollbar-thumb{
+    background:#8FBD4F;
+    border-radius: 10px;
+    cursor: pointer;
+}
+body::-webkit-scrollbar-thumb:hover{
+    background-color: #6c8e3d;
 }
 
 #app-ui{
@@ -71,3 +89,5 @@
     cursor: pointer;
     /*background-color: yellow;*/
 }
+
+

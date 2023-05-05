@@ -1,19 +1,20 @@
 let theme = document.getElementById("theme-icon");
-
 theme.addEventListener("click",change_theme);
 
 function change_theme(e){
     const current_theme = document.getElementById("app-ui");
     if (current_theme.className == "light-theme")
     {
+        localStorage.setItem("theme","dark-theme");
         current_theme.classList.replace("light-theme","dark-theme");
         theme.src = "/assets/sun.svg";
-        localStorage.setItem("theme","dark-theme");
+        
     }
     else{
+        localStorage.setItem("theme","light-theme");
         current_theme.classList.replace("dark-theme","light-theme");
         theme.src = "/assets/moon.svg";
-        localStorage.setItem("theme","light-theme");
+        
     }
 }
 

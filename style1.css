@@ -168,7 +168,7 @@
 #item #item-title{
     font-family: var(--font2);
     font-weight: 600;
-    font-size: calc(3rem + 1vh);
+    font-size: calc(2rem + 2vh);
     width: 80%;
     word-wrap: break-word;
     list-style: none;
