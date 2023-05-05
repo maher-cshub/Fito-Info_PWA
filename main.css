@@ -40,6 +40,8 @@
     min-height: var(--app-height);
     max-width: var(--app-width);
     background-color: var(--primary-color);
+    box-sizing:content-box;
+    
 }
 #nav-bar{
     position: relative;
