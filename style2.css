@@ -37,6 +37,7 @@
     font-weight: 600;
     font-size: calc(3rem + 2vw);
     color: var(--secondary-color-3);
+    word-wrap: break-word;
 
 }
 

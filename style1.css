@@ -103,6 +103,7 @@
 
 #search-area input::placeholder{
     color: var(--secondary-color-3);
+    
 }
 #search-area input:hover{
     border: solid 3px var(--secondary-color-2) ;
@@ -153,14 +154,13 @@
 }
 #item #item-image{
     position: relative;
-    height: 70%;
     height: 400px;
     width: 100%;
 }
 
 #item #item-details{
     position: relative;
-    height: 30%;
+    /*height: 30%;*/
 }
 #item #item-image img{
     position: relative;
@@ -194,12 +194,12 @@
     width: 80%;
     margin: 0.8rem auto;
     min-height: 3rem;
-    max-height: 4rem;
+    /*max-height: 4rem;*/
     border-radius: 1rem 1rem;
     background-color: var(--secondary-color-3);
     color: var(--secondary-color-1);
     cursor: pointer;
-    
+    word-wrap: break-word;
 }
 
 #item #item-info-btn:hover{
@@ -209,13 +209,7 @@
     transition: all 0.5s ease-in-out;
 }
 
-.hidden{
-    visibility:hidden;
-}
 
-.visible{
-    visibility:visible;
-}
 
 /* Media Queries */
 @media screen and (min-width: 600px){
@@ -233,5 +227,16 @@
 @media screen and (min-width: 1200px){
     #results-area{
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width:271px){
+    #search-area input{
+        min-width: 100px;
+        width: 90%;
+        max-width: 200px;
+    }
+    #search-area input::placeholder{
+        font-size:small;
     }
 }
