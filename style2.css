@@ -53,6 +53,7 @@
     outline: none;
     font-size: calc(1rem + 2vw);
     word-wrap: break-word;
+    
   }
   
   .active, .collapsible:hover {
@@ -64,7 +65,7 @@
     padding: 0 0.6rem;
     max-height: 0;
     overflow-x: hidden;
-    transition: max-height 0.8s ease-out;
+    transition: max-height 0.5s ease-out;
     background-color: #f1f1f1;
     overflow-y: scroll;
     overflow-wrap: break-word;

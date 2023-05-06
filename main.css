@@ -59,6 +59,7 @@ body::-webkit-scrollbar-thumb:hover{
     max-width: var(--app-width);
     background-color: var(--primary-color);
     box-sizing:content-box;
+    /*transition: all 0.5s ease-in-out;*/
     
 }
 #nav-bar{

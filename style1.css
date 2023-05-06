@@ -138,6 +138,10 @@
     margin: 2em 0;
     background-color: var(--secondary-color-1);
 }
+
+#item{
+    transition: all 0.3s ease-in-out;
+}
 #item:hover{
 
     filter:saturate(100%);
@@ -145,7 +149,7 @@
 }
 
 #item:not(:hover){
-    filter: saturate(20%) blur(1px);
+    filter: saturate(50%) blur(1px);
 }
 #item #item-image{
     position: relative;
@@ -195,11 +199,14 @@
     background-color: var(--secondary-color-3);
     color: var(--secondary-color-1);
     cursor: pointer;
+    
 }
 
 #item #item-info-btn:hover{
     color: var(--secondary-color-3);
     background-color: var(--secondary-color-2);
+    box-shadow: 0px 0px 10px 1px var(--secondary-color-2);
+    transition: all 0.5s ease-in-out;
 }
 
 .hidden{
