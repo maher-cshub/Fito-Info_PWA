@@ -77,7 +77,7 @@ body::-webkit-scrollbar-thumb:hover{
 
 
 #logo{
-    height: 180px;
+    height: 200px;
     width: 100%;
     padding-left: 40px;
     user-select: none;
@@ -93,3 +93,21 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 
+@media screen and (min-width: 50px) and (max-width: 251px){
+
+    #logo{
+        height: 80px;
+    }
+    #theme-icon{
+        scale: 0.6;
+    }
+}
+
+@media screen and (min-width:251px) and (max-width:320px){
+    #logo{
+        height: 100px;
+    }
+    #theme-icon{
+        scale: 0.6;
+    }
+}

@@ -8,9 +8,7 @@
 }
 
 
-#content-area *{
-    display: inline-block;
-}
+
 
 
 #item-image{
@@ -69,12 +67,14 @@
     background-color: #f1f1f1;
     overflow-y: scroll;
     overflow-wrap: break-word;
+    
   }
   .active-content{
     border: solid 2px var(--secondary-color-2);
     border-top: none;
   }
   
+
 
   .content::-webkit-scrollbar{
     background-color: rgb(236, 236, 236);
