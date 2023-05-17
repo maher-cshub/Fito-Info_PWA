@@ -73,14 +73,13 @@ function saveElement(element){
 async function getAllItems(){
     try {  
         const items_ref = ref(database,"items");
+        
         await onValue(items_ref,function(snapshot){
             if (snapshot.exists()){
                 let items = Object.entries(snapshot.val())
-                localStorage.removeItem("items");
                 localStorage.setItem("items",JSON.stringify(items))
             }
             else{
-                localStorage.removeItem("items");
                 localStorage.setItem("items",JSON.stringify([]))
             }
         });
@@ -91,13 +90,13 @@ async function getAllItems(){
 
 
 async function refreshData(){
-    
+
     results_area.innerHTML = "";
     
     await getAllItems(); 
 
     let items = JSON.parse(localStorage.getItem("items"));
-
+    console.log(items)
     if (items.length > 0){
         items.forEach(element => {
             saveElement(element);
@@ -106,6 +105,7 @@ async function refreshData(){
     initVars()
     return
 }
+
 
 
 onChildAdded(ref(database,"items"),(snapshot)=>{
@@ -122,6 +122,7 @@ onChildAdded(ref(database,"items"),(snapshot)=>{
         return element[1]["name"] == snapshot.val()["name"]
     })
     if (exist == false){
+        localStorage.removeItem("items");
         refreshData()
         return
     }
@@ -143,4 +144,4 @@ setInterval(()=>{
     refreshData()
 },60000)
 
-refreshData()
+//refreshData()
