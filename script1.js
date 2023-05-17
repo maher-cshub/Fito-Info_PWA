@@ -73,15 +73,16 @@ function saveElement(element){
 async function getAllItems(){
     try {  
         const items_ref = ref(database,"items");
-        
         await onValue(items_ref,function(snapshot){
             if (snapshot.exists()){
                 let items = Object.entries(snapshot.val())
                 localStorage.setItem("items",JSON.stringify(items))
+                
             }
             else{
                 localStorage.setItem("items",JSON.stringify([]))
             }
+
         });
     } catch (error) {
         alert("please check your internet connection")
@@ -90,43 +91,25 @@ async function getAllItems(){
 
 
 async function refreshData(){
-
-    results_area.innerHTML = "";
     
     await getAllItems(); 
 
-    let items = JSON.parse(localStorage.getItem("items"));
-    console.log(items)
-    if (items.length > 0){
-        items.forEach(element => {
-            saveElement(element);
-        });
-    }
+    results_area.innerHTML = "";
+
+    let items = JSON.parse(localStorage.getItem("items"))
+    
+    items.forEach(saveElement)
+
     initVars()
+
     return
 }
 
 
+onChildAdded(ref(database,"items"),(snapshot,key)=>{
+    refreshData()
 
-onChildAdded(ref(database,"items"),(snapshot)=>{
-    
-    let items =  JSON.parse(localStorage.getItem("items"));
-    if (items == null || items == undefined)
-    {
-        refreshData()
-        return
-    }
-
-    //check if child exist in client
-    const exist = items.some((element)=>{
-        return element[1]["name"] == snapshot.val()["name"]
-    })
-    if (exist == false){
-        localStorage.removeItem("items");
-        refreshData()
-        return
-    }
-})
+        })
 
 
 //--------------------item removed (done)
@@ -144,4 +127,3 @@ setInterval(()=>{
     refreshData()
 },60000)
 
-//refreshData()
